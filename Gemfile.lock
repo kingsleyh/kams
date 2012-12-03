@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    eventmachine (1.0.0)
+    ffi (1.2.0)
+    gdbm (1.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  eventmachine
+  ffi
+  gdbm

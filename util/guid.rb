@@ -8,8 +8,10 @@
 #
 #
 # Note from Justin Collins: Thanks, David!
+require File.dirname(__FILE__) + '/platform'
 
-if RUBY_PLATFORM =~ /win|ming/i
+if Platform.is_windows?
+
   module Guid_Win32_
     require 'Win32API'
 
@@ -75,11 +77,7 @@ else
 end
 
 class Guid
-  if RUBY_PLATFORM =~ /win|ming/i
-    include Guid_Win32_
-  else
-    include Guid_Unix_
-  end
+  include Platform.is_windows? ? Guid_Win32_ : Guid_Unix_
 
   def hexdigest
     @bytes.unpack("h*")[0]
@@ -168,3 +166,5 @@ if __FILE__ == $0
     end
   end
 end
+
+

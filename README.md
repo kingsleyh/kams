@@ -9,6 +9,8 @@ Website: <http://kingdomsofahln.com>
 [Ruby](http://ruby-lang.org/) (1.8.6, 1.8.7, or 1.9.1)
 
 [EventMachine](http://rubyeventmachine.com/)
+gbdm installation and gems
+ffi gem
 
 ### Installation
 
