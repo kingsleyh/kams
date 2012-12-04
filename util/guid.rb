@@ -9,8 +9,9 @@
 #
 # Note from Justin Collins: Thanks, David!
 require File.dirname(__FILE__) + '/platform'
+PLATFORM = Platform.new
 
-if Platform.is_windows?
+if PLATFORM.is_windows?
 
   module Guid_Win32_
     require 'Win32API'
@@ -77,7 +78,7 @@ else
 end
 
 class Guid
-  include Platform.is_windows? ? Guid_Win32_ : Guid_Unix_
+  include PLATFORM.is_windows? ? Guid_Win32_ : Guid_Unix_
 
   def hexdigest
     @bytes.unpack("h*")[0]
@@ -131,40 +132,6 @@ class Guid
   end
 end
 
-if __FILE__ == $0
-  require 'test/unit'
 
-  class GuidTest < Test::Unit::TestCase
-    def test_new
-      g = Guid.new
-
-      # different representations of guid: hexdigest, hex+dashes, raw bytes
-      assert_equal(0, g.to_s =~ /\A[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\z/)
-      assert_equal(16, g.raw.length)
-      assert_equal(0, g.hexdigest =~ /\A[0-9a-f]{32}\z/)
-      assert_equal(g.hexdigest, g.to_s.gsub(/-/, ''))
-
-      # must be different each time we produce (this is just a simple test)
-      g2 = Guid.new
-      assert_equal(true, g != g2)
-      assert_equal(true, g.to_s != g2.to_s)
-      assert_equal(true, g.raw != g2.raw)
-      assert_equal(true, g.hexdigest != g2.hexdigest)
-      assert_equal(1000, (1..1000).select { |i| g != Guid.new }.length)
-    end
-
-    def test_from_s
-      g = Guid.new
-      g2 = Guid.from_s(g.to_s)
-      assert_equal(g, g2)
-    end
-
-    def test_from_raw
-      g = Guid.new
-      g2 = Guid.from_raw(g.raw)
-      assert_equal(g, g2)
-    end
-  end
-end
 
 

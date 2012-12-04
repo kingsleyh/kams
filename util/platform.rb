@@ -2,9 +2,12 @@ require 'rbconfig'
 
 class Platform
 
-  def self.os
-    host_os = RbConfig::CONFIG['host_os']
-    case host_os
+  def initialize(detected_host = RbConfig::CONFIG['host_os'])
+    @host_os = detected_host
+  end
+
+  def os
+    case @host_os
       when /mswin|msys|mingw|cygwin|bccwin|wince|emc/
         :windows
       when /darwin|mac os/
@@ -14,15 +17,15 @@ class Platform
       when /solaris|bsd/
         :unix
       else
-        raise RuntimeError, "unknown os: #{host_os.inspect}"
+        raise RuntimeError, "Error detected operating system is unknown: #{@host_os.inspect}"
     end
   end
 
-  def self.is_windows?
+  def is_windows?
     os == :windows
   end
 
-  def self.is_nix?
+  def is_nix?
     os != :windows
   end
 
