@@ -27,9 +27,17 @@ describe Guid do
     @guid.should == guid2
   end
 
-  it "should convert correctly from bytes" do
+  it "should convert correctly from raw" do
     guid2 = Guid.from_raw(@guid.raw)
     @guid.should == guid2
+  end
+
+  it "should raise an error on from string if hexstring is invalid" do
+    expect { Guid.from_s("invalid-hexstring") }.to raise_error(ArgumentError, 'Invalid GUID hexstring')
+  end
+
+  it "should raise an error on from raw if bytes is not a length of 16" do
+    expect { Guid.from_raw("invalid-bytes") }.to raise_error(ArgumentError, 'Invalid GUID raw bytes, length must be 16 bytes')
   end
 
 end
