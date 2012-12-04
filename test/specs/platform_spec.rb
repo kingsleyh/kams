@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/../util/platform'
+require File.dirname(__FILE__) + '/../../util/platform'
 
 describe Platform do
 

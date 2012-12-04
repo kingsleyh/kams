@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/../util/guid'
+require File.dirname(__FILE__) + '/../../util/guid'
 
 describe Guid do
 
