@@ -96,7 +96,7 @@ module ServerConfig
 
     #Saves the configuration to file.
     def save
-      File.open "conf/config.yaml", "w" do |f|
+      File.open File.dirname(__FILE__) + "/../conf/config.yaml", "w" do |f|
         YAML.dump(@config, f)
       end
     end

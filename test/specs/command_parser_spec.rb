@@ -25,7 +25,7 @@ describe CommandParser do
     assert_generic_command('drop book', {:action => :drop, :object => 'book'})
     assert_generic_command('quit', {:action => :quit})
     assert_generic_command('put scroll in bag', {:action => :put, :item => 'scroll', :count => 0, :container => 'bag'})
-    assert_generic_command('help', {:action => :help, :object=> ""})
+    assert_generic_command('help', {:action => :help, :object => ""})
     assert_generic_command('health', {:action => :health})
     assert_generic_command('status', {:action => :status})
     assert_hunger %w(satiety hunger)
@@ -34,7 +34,7 @@ describe CommandParser do
     assert_sense :smell, %w(sniff smell)
     assert_sense :taste, %w(taste lick)
     assert_sense :feel, %w(feel)
-    assert_generic_command('write something', {:action => :write, :target=> "something"})
+    assert_generic_command('write something', {:action => :write, :target => "something"})
     assert_generic_command('who', {:action => :who})
     assert_generic_command('time', {:action => :time})
     assert_generic_command('date', {:action => :date})
@@ -106,7 +106,7 @@ describe CommandParser do
   end
 
   it "should parse custom commands" do
-     assert_custom_command('slide up', {:action => :custom, :custom_action => 'slide', :target => 'up'})
+    assert_custom_command('slide up', {:action => :custom, :custom_action => 'slide', :target => 'up'})
   end
 
   it "should parse news commands" do
@@ -120,6 +120,145 @@ describe CommandParser do
     assert_news_command('news unread', {:action => :list_unread})
     assert_news_command('news all', {:action => :all})
   end
+
+  it "should parse admin commands" do
+    @player.enable_admin
+    assert_admin_command('astatus', {:action => :astatus})
+    assert_admin_command('ahelp acroom', {:action => :ahelp, :object => ' acroom'})
+    assert_admin_command('awho', {:action => :awho})
+    assert_admin_command('acreate dog spot', {:action => :acreate, :object => 'dog', :name => 'spot'})
+    assert_admin_command('acarea The Lounge', {:action => :acarea, :name => 'The Lounge'})
+    assert_admin_command('acroom east The Lounge', {:action => :acroom, :out_dir => 'east', :in_dir => 'west', :name => 'The Lounge'})
+    assert_admin_command('acexit west The Lounge', {:action => :acreate, :alt_names => ['west'], :args => ['The Lounge'], :object => 'exit'})
+    assert_admin_command('acdoor south', {:action => :acdoor, :direction => 'south'})
+    assert_admin_command('aconfig restart_delay 5', {:action => :aconfig, :setting => 'restart_delay', :value => '5'})
+    assert_admin_command('aconfig reload', {:action => :aconfig, :setting => 'reload'})
+    assert_acportal %w(jump climb crawl enter)
+    assert_portal %w(action exit entrance portal)
+    assert_admin_command('acprop rock', {:action => :acreate, :object => 'prop', :generic => 'rock'})
+    assert_admin_command('adelete rock', {:action => :adelete, :object => 'rock'})
+    assert_admin_command('deleteplayer superman', {:action => :delete_player, :object => 'superman'})
+    assert_admin_command('adesc inroom rock true', {:action => :adesc, :object => 'rock', :inroom => true, :desc => 'true'})
+  end
+
+
+  #     when /^adesc\s+(.*?)\s+(.*)$/i
+  #       event[:action] = :adesc
+  #       event[:object] = $1
+  #       event[:desc] = $2
+  #     when /^ahide\s+(.*)$/i
+  #       event[:action] = :ahide
+  #       event[:object] = $1
+  #       event[:hide] = true
+  #     when /^ashow\s+(.*)$/i
+  #       event[:action] = :ahide
+  #       event[:object] = $1
+  #       event[:hide] = false
+  #     when /^ainfo\s+set\s+(.+)\s+@((\w|\.|\_)+)\s+(.*?)$/i
+  #       event[:action] = :ainfo
+  #       event[:command] = "set"
+  #       event[:object] = $1
+  #       event[:attrib] = $2
+  #       event[:value] = $4
+  #     when /^ainfo\s+(del|delete)\s+(.+)\s+@((\w|\.|\_)+)$/i
+  #       event[:action] = :ainfo
+  #       event[:command] = "delete"
+  #       event[:object] = $2
+  #       event[:attrib] = $3
+  #     when /^ainfo\s+(show|clear)\s+(.*)$/i
+  #       event[:action] = :ainfo
+  #       event[:object] = $2
+  #       event[:command] = $1
+  #     when /^alook$/i
+  #       event[:action] = :alook
+  #     when /^alook\s+(.*)$/i
+  #       event[:action] = :alook
+  #       event[:at] = $1
+  #     when /^alist$/i
+  #       event[:action] = :alist
+  #     when /^alist\s+(@\w+|class)\s+(.*)/i
+  #       event[:action] = :alist
+  #       event[:attrib] = $2
+  #       event[:match] = $1
+  #     when /^aset\s+(.+?)\s+(@\w+|smell|feel|texture|taste|sound|listen)\s+(.*)$/i
+  #       event[:action] = :aset
+  #       event[:object] = $1
+  #       event[:attribute] = $2
+  #       event[:value] = $3
+  #     when /^aset!\s+(.+?)\s+(@\w+|smell|feel|texture|taste|sound|listen)\s+(.*)$/i
+  #       event[:action] = :aset
+  #       event[:object] = $1
+  #       event[:attribute] = $2
+  #       event[:value] = $3
+  #       event[:force] = true
+  #     when /^aput\s+(.*?)\s+in\s+(.*?)$/i
+  #       event[:action] = :aput
+  #       event[:object] = $1
+  #       event[:in] = $2
+  #     when /^areas$/i
+  #       event[:action] = :areas
+  #     when /^areload\s+(.*)$/i
+  #       event[:action] = :areload
+  #       event[:object] = $1
+  #     when /^areact\s+load\s+(.*?)\s+(\w+)$/i
+  #       event[:action] = :areaction
+  #       event[:object] = $1
+  #       event[:command] = "load"
+  #       event[:file] = $2
+  #     when /^areact\s+(add|delete)\s+(.*?)\s+(\w+)$/i
+  #       event[:action] = :areaction
+  #       event[:object] = $2
+  #       event[:command] = $1
+  #       event[:action_name] = $3
+  #     when /^areact\s+(reload|clear|show)\s+(.*?)$/i
+  #       event[:action] = :areaction
+  #       event[:object] = $2
+  #       event[:command] = $1
+  #     when /^alog\s+(\w+)(\s+(\d+))?$/i
+  #       event[:action] = :alog
+  #       event[:command] = $1
+  #       event[:value] = $3.downcase if $3
+  #     when /^acopy\s+(.*)$/i
+  #       event[:action] = :acopy
+  #       event[:object] = $1
+  #     when /^alearn\s+(\w+)$/i
+  #       event[:action] = :alearn
+  #       event[:skill] = $1
+  #     when /^ateach\s+(\w+)\s+(\w+)$/i
+  #       event[:action] = :ateach
+  #       event[:target] = $1
+  #       event[:skill] = $2
+  #     when /^aforce\s+(.*?)\s+(.*)$/i
+  #       event[:action] = :aforce
+  #       event[:target] = $1
+  #       event[:command] = $2
+  #     when /^(acomm|acomment)\s+(.*?)\s+(.*)$/i
+  #       event[:action] = :acomment
+  #       event[:target] = $2
+  #       event[:comment] = $3
+  #     when /^awatch\s+((start|stop)\s+)?(.*)$/i
+  #       event[:action] = :awatch
+  #       event[:target] = $3.downcase if $3
+  #       event[:command] = $2.downcase if $2
+  #     when /^asave$/i
+  #       event[:action] = :asave
+  #     when /^restart$/i
+  #       event[:action] = :restart
+  #     when /^terrain\s+area\s+(.*)$/i
+  #       event[:action] = :terrain
+  #       event[:target] = "area"
+  #       event[:value] = $1
+  #     when /^terrain\s+(room|here)\s+(type|indoors|underwater|water)\s+(.*)$/
+  #       event[:action] = :terrain
+  #       event[:target] = "room"
+  #       event[:setting] = $2.downcase
+  #       event[:value] = $3
+  #     when /^whereis\s(.*)$/
+  #       event[:action] = :whereis
+  #       event[:object] = $1
+  #     else
+  #       return nil
+  #     end
 
   private
   def assert_issue(issue_types)
@@ -202,6 +341,18 @@ describe CommandParser do
     end
   end
 
+  def assert_acportal(commands)
+    commands.each do |command|
+      assert_admin_command('acportal climb d635469-7660-b99b-1764-cc95b9ec5f37', {:action => :acportal, :object => 'portal', :alt_names => [], :args => ["d635469-7660-b99b-1764-cc95b9ec5f37"]})
+    end
+  end
+
+  def assert_portal(commands)
+    commands.each do |command|
+      assert_admin_command('portal object ' + command + ' enter', {:action => :portal, :object => 'object', :setting => command, :value => 'enter'})
+    end
+  end
+
   def assert_generic_command(command, options)
     parser = CommandParser.parse(@player, command)
     options.each do |key, value|
@@ -275,31 +426,31 @@ describe CommandParser do
   end
 
   def assert_custom_command(command, options)
-      parser = CommandParser.parse(@player, command)
-      options.each do |key, value|
-        parser.send(key).should == value
-        parser.type.should == :Custom
-        parser.player.should == @player
-      end
+    parser = CommandParser.parse(@player, command)
+    options.each do |key, value|
+      parser.send(key).should == value
+      parser.type.should == :Custom
+      parser.player.should == @player
+    end
   end
 
   def assert_news_command(command, options)
-      parser = CommandParser.parse(@player, command)
-      options.each do |key, value|
-        parser.send(key).should == value
-        parser.type.should == :News
-        parser.player.should == @player
-      end
+    parser = CommandParser.parse(@player, command)
+    options.each do |key, value|
+      parser.send(key).should == value
+      parser.type.should == :News
+      parser.player.should == @player
+    end
   end
 
   def assert_admin_command(command, options)
-      p command
-      p parser = CommandParser.parse(@player, command)
-      options.each do |key, value|
-        parser.send(key).should == value
-        parser.type.should == :Admin
-        parser.player.should == @player
-      end
+    p command
+    p parser = CommandParser.parse(@player, command)
+    options.each do |key, value|
+      parser.send(key).should == value
+      parser.type.should == :Admin
+      parser.player.should == @player
+    end
   end
 
 end

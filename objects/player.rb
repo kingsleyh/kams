@@ -64,6 +64,10 @@ class Player < LivingObject
     inventory.find(item) || equipment.find(item)
   end
 
+  def enable_admin
+    @admin = true
+  end
+
   def menu options, answers = nil, &block
     @player.ask_menu options, answers, &block
   end

@@ -1,9 +1,9 @@
---- 
+---
 :log_level: 1
 :save_rate: 1440
 :debug: false
 :admin: supercool
-:goid_type: ":guid"
+:goid_type: ':guid'
 :port: 8888
 :update_rate: 30
 :restart_delay: 10
