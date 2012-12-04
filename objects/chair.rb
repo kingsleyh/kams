@@ -1,4 +1,4 @@
-require 'traits/sittable'
+require File.dirname(__FILE__) + '/../traits/sittable'
 
 class Chair < GameObject
   include Sittable

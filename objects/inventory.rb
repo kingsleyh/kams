@@ -1,4 +1,4 @@
-require 'lib/gary'
+require File.dirname(__FILE__) + '/../lib/gary'
 
 #Fairly small extensions to Gary. Used everywhere.
 class Inventory < Gary

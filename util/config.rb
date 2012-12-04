@@ -70,7 +70,7 @@ module ServerConfig
     #Loads the configuration. Returns cached value unless force is true.
     def load(force = false)
       if force or not @config
-        File.open "conf/config.yaml" do |f|
+        File.open File.dirname(__FILE__) + "/../conf/config.yaml" do |f|
           @config = YAML.load(f)
         end
 

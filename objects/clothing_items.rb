@@ -1,5 +1,5 @@
-require 'traits/wearable'
-require'lib/gameobject'
+require File.dirname(__FILE__) + '/../traits/wearable'
+require File.dirname(__FILE__) + '/../lib/game_object'
 
 class GenericClothing < GameObject
   include Wearable

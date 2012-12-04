@@ -1,4 +1,4 @@
-require 'util/log'
+require File.dirname(__FILE__) + '/../util/log'
 
 #This is basically an adaptation of a serializable (kinda) Proc. The binding is
 #not serializable, but then again it doesn't really need to be, does it?

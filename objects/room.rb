@@ -1,5 +1,5 @@
-require 'objects/container'
-require 'objects/exit'
+require File.dirname(__FILE__) + '/../objects/container'
+require File.dirname(__FILE__) + '/../objects/exit'
 
 #A room is where things live. Rooms themselves need to be in other rooms (kind of) and can certainly be nested as deeply as you would like.
 #Especially since doors can be set up arbitrarily. A room should be placed within an Area.

@@ -1,4 +1,4 @@
-require 'traits/hasinventory'
+require File.dirname(__FILE__) + '/../traits/hasinventory'
 
 #Holds an object's equipment, such as clothing, armor, weapons, etc.
 #

@@ -1,4 +1,4 @@
-require 'objects/inventory'
+require File.dirname(__FILE__) + '/../objects/inventory'
 
 #This module should be used for objects which have an Inventory.
 module HasInventory

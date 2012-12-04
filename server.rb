@@ -25,11 +25,11 @@ $LOAD_PATH << File.expand_path(File.dirname(__FILE__))
 
 require 'rubygems'
 require 'eventmachine'
-require 'util/config'
-require 'util/log'
-require 'lib/util'
-require 'components/manager'
-require 'lib/playerconnect'
+require File.dirname(__FILE__) + '/util/config'
+require File.dirname(__FILE__) + '/util/log'
+require File.dirname(__FILE__) + '/lib/util'
+require File.dirname(__FILE__) + '/components/manager'
+require File.dirname(__FILE__) + '/lib/playerconnect'
 
 #The Server is what starts everything up. In fact, that is pretty much all it does. To use, call Server.new.
 class Server

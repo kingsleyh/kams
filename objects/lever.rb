@@ -1,4 +1,4 @@
-require 'objects/container'
+require File.dirname(__FILE__) + '/../objects/container'
 #This is an object to test out the 'custom actions' dealie
 #
 #In general, built-in actions will be fast and therefore more efficient,

@@ -1,4 +1,4 @@
-require 'objects/exit'
+require File.dirname(__FILE__) + '/../objects/exit'
 #Like an Exit, but different.
 #
 #Portals can be entered, do not show up on the list of exits,

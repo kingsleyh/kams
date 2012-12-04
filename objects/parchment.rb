@@ -1,5 +1,5 @@
-require 'lib/gameobject'
-require 'traits/readable'
+require File.dirname(__FILE__) + '/../lib/game_object'
+require File.dirname(__FILE__) + '/../traits/readable'
 
 class Parchment < GameObject
   include Readable

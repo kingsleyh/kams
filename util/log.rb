@@ -1,3 +1,5 @@
+require File.dirname(__FILE__) + '/../util/config'
+
 #Simplistic logging with buffer and autodeletion of the log when it gets too big.
 class Logger
   Ultimate = 3

@@ -1,5 +1,5 @@
-require 'lib/gameobject'
-require 'traits/hasinventory.rb'
+require File.dirname(__FILE__) + '/../lib/game_object'
+require File.dirname(__FILE__) + '/../traits/hasinventory.rb'
 
 #Container is used extensively inside the codebase, though essentially it is just a GameObject
 #with an Inventory that propogates events to its contents.

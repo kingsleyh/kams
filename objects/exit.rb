@@ -1,4 +1,4 @@
-require 'lib/gameobject'
+require File.dirname(__FILE__) + '/../lib/game_object'
 
 #A generic exit. Add to Rooms to move between them. Don't forget to put an Exit in both rooms, if you want to move between them.
 #

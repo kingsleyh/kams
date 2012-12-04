@@ -1,4 +1,4 @@
-require 'events/combat'
+require File.dirname(__FILE__) + '/../events/combat'
 
 module MartialCombat
   class << self

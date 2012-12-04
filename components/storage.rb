@@ -1,12 +1,12 @@
-require 'lib/gary'
+require File.dirname(__FILE__) + '/../lib/gary'
 require 'gdbm'
 require 'digest/md5'
 require 'thread'
-require 'util/guid'
-require 'util/log'
-require 'lib/errors'
-load 'util/all-behaviors.rb'
-load 'util/all-objects.rb'
+require File.dirname(__FILE__) + '/../util/guid'
+require File.dirname(__FILE__) + '/../util/log'
+require File.dirname(__FILE__) + '/../lib/errors'
+load File.dirname(__FILE__) + '/../util/all-behaviors.rb'
+load File.dirname(__FILE__) + '/../util/all-objects.rb'
 
 # Storage class for object persistance. Uses GDBM.
 #
@@ -35,7 +35,7 @@ load 'util/all-objects.rb'
 # storage/Player file. Additionally, passwords are stored as MD5 hashes in
 # storage/passwords, indexed by GOID (a tiny bit of security there).
 class StorageMachine
-  def initialize(path = 'storage/')
+  def initialize(path = File.dirname(__FILE__) + '/../storage/')
     @path = path
     @mutex = Mutex.new
     @saved = 0

@@ -1,4 +1,4 @@
-require 'lib/errors'
+require File.dirname(__FILE__) + '/../lib/errors'
 
 #The purpose of this module is simply to clean up the PlayerConnection class a little.
 #Provides all the methods that deal with the server menu and logging in/creating a character,
@@ -258,7 +258,7 @@ module Login
     @player = Player.new(self, nil, ServerConfig.start_room, @new_name, [], "a typical person", "This is a normal, everyday kind of person.", "person", @sex)
     @player.word_wrap = 80
 
-    require 'objects/clothing_items' #why not
+    require File.dirname(__FILE__) + '/../objects/clothing_items' #why not
     shirt = Shirt.new
     pants = Pants.new
     undies = Underwear.new

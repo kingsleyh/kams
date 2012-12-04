@@ -1,8 +1,8 @@
-require 'objects/living'
-require 'lib/ansicolor'
-require 'components/commandparser'
-require 'traits/hasinventory'
-require 'help/syntax'
+require File.dirname(__FILE__) + '/../objects/living'
+require File.dirname(__FILE__) + '/../lib/ansicolor'
+require File.dirname(__FILE__) + '/../components/command_parser'
+require File.dirname(__FILE__) + '/../traits/hasinventory'
+require File.dirname(__FILE__) + '/../help/syntax'
 
 #Base class for all players.
 class Player < LivingObject

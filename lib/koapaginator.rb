@@ -1,4 +1,4 @@
-require 'util/paginator'
+require File.dirname(__FILE__) + '/../util/paginator'
 
 #Wraps up the Paginator class to make it easier to use in the game.
 class KPaginator

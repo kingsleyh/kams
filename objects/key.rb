@@ -1,4 +1,4 @@
-require 'lib/gameobject'
+require File.dirname(__FILE__) + '/../lib/game_object'
 #Keys open doors.
 class Key < GameObject
   def initialize(*args)

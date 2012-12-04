@@ -1,5 +1,5 @@
-require 'lib/gameobject'
-require 'traits/expires'
+require File.dirname(__FILE__) + '/../lib/game_object'
+require File.dirname(__FILE__) + '/../traits/expires'
 
 #Corpses are left when something dies. Expires after a while.
 class Corpse < GameObject

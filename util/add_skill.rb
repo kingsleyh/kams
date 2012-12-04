@@ -1,5 +1,5 @@
 require 'yaml'
-require 'lib/combatskill'
+require File.dirname(__FILE__) + '/../lib/combatskill'
 
 if File.exist? "lib/combat_skill.yaml"
   skills = YAML.load("lib/combat_skill.yaml")

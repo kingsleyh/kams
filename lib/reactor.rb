@@ -1,4 +1,4 @@
-require 'util/rproc'
+require File.dirname(__FILE__) + '/../util/rproc'
 
 #The Reactor class is the mechanism by which Mobiles can be scripted. A reaction is made up of three parts:
 #* The action(s)/commands to which to react

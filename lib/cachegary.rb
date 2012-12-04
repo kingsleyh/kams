@@ -1,4 +1,4 @@
-require 'lib/gary'
+require File.dirname(__FILE__) + '/../lib/gary'
 require 'thread'
 
 #This is a version of a Gary which will unload unused objects and reload them transparently. Unloading is currently

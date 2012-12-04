@@ -1,5 +1,5 @@
-require 'lib/gameobject'
-require 'traits/news'
+require File.dirname(__FILE__) + '/../lib/game_object'
+require File.dirname(__FILE__) + '/../traits/news'
 
 #Newsboards for posting news.
 #

@@ -1051,7 +1051,7 @@ module Admin
 
     #Tail a file
     def tail file, lines = 10
-      require 'util/tail'
+      require File.dirname(__FILE__) + '/../util/tail'
 
       output = []
       File::Tail::Logfile.tail(file, :backward => lines, :return_if_eof => true) do |line|

@@ -1,4 +1,4 @@
-require 'objects/container'
+require File.dirname(__FILE__) + '/../objects/container'
 
 #An Area contains rooms and can be used to manage the weather and other area-wide information.
 #Right now they don't do much but hold rooms, though.

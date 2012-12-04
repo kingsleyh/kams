@@ -1,5 +1,5 @@
-require 'traits/openable'
-require 'objects/exit'
+require File.dirname(__FILE__) + '/../traits/openable'
+require File.dirname(__FILE__) + '/../objects/exit'
 
 #A...door. A lockable door.
 class Door < Exit

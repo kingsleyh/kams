@@ -1,7 +1,7 @@
-require 'lib/gameobject'
-require 'objects/equipment'
-require 'traits/position'
-require 'traits/hasinventory'
+require File.dirname(__FILE__) + '/../lib/game_object'
+require File.dirname(__FILE__) + '/../objects/equipment'
+require File.dirname(__FILE__) + '/../traits/position'
+require File.dirname(__FILE__) + '/../traits/hasinventory'
 
 #Shared parent class of Player and Mobile.
 class LivingObject < GameObject

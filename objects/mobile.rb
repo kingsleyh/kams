@@ -1,7 +1,7 @@
-require 'objects/living'
-require 'lib/reactor'
-require 'traits/reacts'
-require 'traits/respawns'
+require File.dirname(__FILE__) + '/../objects/living'
+require File.dirname(__FILE__) + '/../lib/reactor'
+require File.dirname(__FILE__) + '/../traits/reacts'
+require File.dirname(__FILE__) + '/../traits/respawns'
 
 #Base class for all mobiles.
 class Mobile < LivingObject

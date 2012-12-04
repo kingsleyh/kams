@@ -1,9 +1,9 @@
-require 'util/log'
-require 'objects/inventory'
-require 'traits/pronoun'
-require 'util/guid'
+require File.dirname(__FILE__) + '/../util/log'
+require File.dirname(__FILE__) + '/../objects/inventory'
+require File.dirname(__FILE__) + '/../traits/pronoun'
+require File.dirname(__FILE__) + '/../util/guid'
 require 'observer'
-require 'lib/info'
+require File.dirname(__FILE__) + '/../lib/info'
 
 #Base class for all game objects, including players. Should be subclassed to do anything useful.
 class GameObject

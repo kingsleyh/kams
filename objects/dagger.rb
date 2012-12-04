@@ -1,4 +1,4 @@
-require "objects/weapon"
+require File.dirname(__FILE__) + "/../objects/weapon"
 
 class Dagger < Weapon
 

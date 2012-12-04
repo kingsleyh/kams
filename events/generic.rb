@@ -1,4 +1,4 @@
-require 'lib/issues'
+require File.dirname(__FILE__) + '/../lib/issues'
 
 #Contains all the generic commands
 module Generic

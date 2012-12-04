@@ -1,8 +1,8 @@
-require 'lib/cachegary'
-require 'components/eventhandler'
-require 'components/storage'
-require 'lib/errors'
-require 'lib/calendar'
+require File.dirname(__FILE__) + '/../lib/cachegary'
+require File.dirname(__FILE__) + '/../components/eventhandler'
+require File.dirname(__FILE__) + '/../components/storage'
+require File.dirname(__FILE__) + '/../lib/errors'
+require File.dirname(__FILE__) + '/../lib/calendar'
 require 'set'
 
 #The Manager class uses the observer model to recieve events from objects, which

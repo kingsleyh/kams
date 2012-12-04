@@ -1,11 +1,11 @@
 require 'strscan'
-require 'lib/ansicolor'
-require 'lib/telnetcodes'
+require File.dirname(__FILE__) + '/../lib/ansicolor'
+require File.dirname(__FILE__) + '/../lib/telnetcodes'
 require 'socket'
-require 'lib/errors'
-require 'lib/login'
-require 'lib/koapaginator'
-require 'lib/editor'
+require File.dirname(__FILE__) + '/../lib/errors'
+require File.dirname(__FILE__) + '/../lib/login'
+require File.dirname(__FILE__) + '/../lib/koapaginator'
+require File.dirname(__FILE__) + '/../lib/editor'
 
 #This is the network connection to the Player. Handles all input/output.
 module PlayerConnection
