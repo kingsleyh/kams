@@ -1,5 +1,6 @@
 require 'set'
 require File.dirname(__FILE__) + '/../lib/event'
+require File.dirname(__FILE__) + '/../lib/util'
 
 #CommandParser parses commands into commands for the event handler.
 module CommandParser

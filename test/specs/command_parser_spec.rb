@@ -1,7 +1,6 @@
 require File.dirname(__FILE__) + '/../../components/manager'
 require File.dirname(__FILE__) + '/../../components/command_parser'
 require File.dirname(__FILE__) + '/../../objects/player'
-require File.dirname(__FILE__) + '/helpers/commands'
 
 $manager = Manager.new
 
@@ -12,50 +11,295 @@ describe CommandParser do
   end
 
   it "should parse generic commands" do
-    assert_generic_command(@player, 'delete me please', {:action => :deleteme})
+    assert_generic_command('delete me please', {:action => :deleteme})
     assert_issue %w(bug typo idea)
     assert_look %w(look l)
-    assert_generic_command(@player, 'lock it', {:action => :lock, :object => 'it'})
-    assert_generic_command(@player, 'unlock it', {:action => :unlock, :object => 'it'})
+    assert_generic_command('lock it', {:action => :lock, :object => 'it'})
+    assert_generic_command('unlock it', {:action => :unlock, :object => 'it'})
     assert_get %w(get grab take)
+    assert_generic_command('give book to maggie', {:action => :give, :item => 'book', :to => 'maggie'})
+    assert_inventory %w(i inv inventory)
+    assert_generic_command('more', {:action => :more})
+    assert_generic_command('open door', {:action => :open, :object => 'door'})
+    assert_close %w(close shut)
+    assert_generic_command('drop book', {:action => :drop, :object => 'book'})
+    assert_generic_command('quit', {:action => :quit})
+    assert_generic_command('put scroll in bag', {:action => :put, :item => 'scroll', :count => 0, :container => 'bag'})
+    assert_generic_command('help', {:action => :help, :object=> ""})
+    assert_generic_command('health', {:action => :health})
+    assert_generic_command('status', {:action => :status})
+    assert_hunger %w(satiety hunger)
+    assert_status %w(st stat status)
+    assert_sense :listen, %w(listen)
+    assert_sense :smell, %w(sniff smell)
+    assert_sense :taste, %w(taste lick)
+    assert_sense :feel, %w(feel)
+    assert_generic_command('write something', {:action => :write, :target=> "something"})
+    assert_generic_command('who', {:action => :who})
+    assert_generic_command('time', {:action => :time})
+    assert_generic_command('date', {:action => :date})
+  end
+
+  it "should parse communication commands" do
+    assert_communication_command('say (with interest) hello', {:action => :say, :phrase => 'hello', :pre => 'with interest'})
+    assert_communication_command('say hello', {:action => :say, :phrase => 'hello', :pre => nil})
+    assert_communication_command('sayto maggie hello', {:action => :say, :phrase => 'hello', :pre => nil, :target => 'maggie'})
+    assert_communication_command('sayto maggie (with pride) hello', {:action => :say, :phrase => 'hello', :pre => 'with pride', :target => 'maggie'})
+    assert_communication_command('whisper maggie (with interest) hello', {:action => :whisper, :phrase => 'hello', :pre => 'with interest', :to => 'maggie'})
+    assert_communication_command('whisper maggie hello', {:action => :whisper, :phrase => 'hello', :pre => nil, :to => 'maggie'})
+    assert_communication_command('tell maggie hello', {:action => :tell, :message => 'hello', :target => 'maggie'})
+    assert_communication_command('reply hello', {:action => :reply, :message => 'hello'})
+  end
+
+  it "should parse emote commands" do
+    assert_fixed_emote %w(uh er eh? eh shrug sigh ponder agree cry hug pet smile laugh ew blush grin frown snicker wave poke yes no huh hi bye yawn bow curtsey brb skip nod back cheer hm)
+    assert_emote_command('emote sings happily', {:action => :emote, :show => 'sings happily'})
+  end
+
+  it "should parse movement commands" do
+    assert_movement_command('gait clumsily', {:action => :gait, :phrase => 'clumsily'})
+    assert_movement_command('gait', {:action => :gait})
+    assert_movement_command('go west', {:action => :move, :direction => "west"})
+    assert_enter %w(jump climb crawl enter)
+    assert_movement_command('sit on chair', {:action => :sit, :object => "chair"})
+    assert_movement_command('sit chair', {:action => :sit, :object => "chair"})
+    assert_movement_command('sit', {:action => :sit})
+    assert_movement_command('pose tall', {:action => :pose, :pose => 'tall'})
+    assert_movement_command('stand', {:action => :stand})
+    assert_direction %w(east west northeast northwest north southeast southwest south e w nw ne sw se n s up down u d in out)
+  end
+
+  it "should parse equipment commands" do
+    assert_equip_command('wear shirt', {:action => :wear, :object => 'shirt', :position => nil})
+    assert_equip_command('wear shirt on torso', {:action => :wear, :object => 'shirt', :position => 'torso'})
+    assert_equip_command('remove shirt', {:action => :remove, :object => 'shirt', :position => nil})
+    assert_equip_command('remove shirt from torso', {:action => :remove, :object => 'shirt', :position => 'torso'})
+  end
+
+  it "should parse settings commands" do
+    assert_settings_command('set colors on', {:action => :setcolor, :option => 'on'})
+    assert_settings_command('set colors off', {:action => :setcolor, :option => 'off'})
+    assert_settings_command('set colors default', {:action => :setcolor, :option => 'default'})
+    assert_settings_command('set colors say red', {:action => :setcolor, :option => 'say', :color => 'red'})
+    assert_settings_command('set colors', {:action => :showcolors})
+    assert_settings_command('set password', {:action => :setpassword})
+    assert_settings_command('set wordwrap off', {:action => :set, :setting => 'wordwrap', :value => 'off'})
+  end
+
+  it "should parse weapon combat commands" do
+    assert_weapon_combat_command('wield sword', {:action => :wield, :weapon => 'sword', :side => nil})
+    assert_weapon_combat_command('wield sword left', {:action => :wield, :weapon => 'sword', :side => 'left'})
+    assert_weapon_combat_command('unwield sword', {:action => :unwield, :weapon => 'sword'})
+    assert_weapon_combat_command('slash', {:action => :slash, :target => nil})
+    assert_weapon_combat_command('slash maggie', {:action => :slash, :target => 'maggie'})
+    assert_weapon_combat_command('block', {:action => :simple_block, :target => nil})
+    assert_weapon_combat_command('block maggie', {:action => :simple_block, :target => 'maggie'})
+  end
+
+  it "should parse martial combat commands" do
+    assert_martial_combat_command('punch', {:action => :punch})
+    assert_martial_combat_command('punch maggie', {:action => :punch, :target => 'maggie'})
+    assert_martial_combat_command('kick', {:action => :kick})
+    assert_martial_combat_command('kick maggie', {:action => :kick, :target => 'maggie'})
+    assert_martial_combat_command('dodge', {:action => :simple_dodge})
+    assert_martial_combat_command('dodge maggie', {:action => :simple_dodge, :target => 'maggie'})
+  end
+
+  it "should parse custom commands" do
+     assert_custom_command('slide up', {:action => :custom, :custom_action => 'slide', :target => 'up'})
+  end
+
+  it "should parse news commands" do
+    assert_news_command('news', {:action => :latest_news})
+    assert_news_command('news last 2', {:action => :latest_news, :limit => 2})
+    assert_news_command('news read 1', {:action => :read_post, :post_id => "1"})
+    assert_news_command('news 1', {:action => :read_post, :post_id => "1"})
+    assert_news_command('news write', {:action => :write_post})
+    assert_news_command('news reply 1', {:action => :write_post, :reply_to => "1"})
+    assert_news_command('news delete 1', {:action => :delete_post, :post_id => "1"})
+    assert_news_command('news unread', {:action => :list_unread})
+    assert_news_command('news all', {:action => :all})
   end
 
   private
   def assert_issue(issue_types)
     issue_types.each do |issue_type|
-      assert_generic_command(@player, issue_type + ' broke it', {:action => :issue, :itype => issue_type.to_sym, :option => "new", :value => 'broke it'})
-      assert_generic_command(@player, issue_type + ' 1', {:action => :issue, :itype => issue_type.to_sym, :option => "show", :issue_id => "1"})
-      assert_generic_command(@player, issue_type + ' list', {:action => :issue, :itype => issue_type.to_sym, :option => "list", :value => nil})
-      assert_generic_command(@player, issue_type + ' 1 status', {:action => :issue, :itype => issue_type.to_sym, :option => "status", :issue_id => "1", :value => nil})
-      assert_generic_command(@player, issue_type + ' show 1', {:action => :issue, :itype => issue_type.to_sym, :option => "show", :issue_id => "1", :value => nil})
-      assert_generic_command(@player, issue_type + ' add 1 oops', {:action => :issue, :itype => issue_type.to_sym, :option => "add", :issue_id => "1", :value => "oops"})
-      assert_generic_command(@player, issue_type + ' del 1', {:action => :issue, :itype => issue_type.to_sym, :option => "del", :issue_id => "1", :value => nil})
+      assert_generic_command(issue_type + ' broke it', {:action => :issue, :itype => issue_type.to_sym, :option => "new", :value => 'broke it'})
+      assert_generic_command(issue_type + ' 1', {:action => :issue, :itype => issue_type.to_sym, :option => "show", :issue_id => "1"})
+      assert_generic_command(issue_type + ' list', {:action => :issue, :itype => issue_type.to_sym, :option => "list", :value => nil})
+      assert_generic_command(issue_type + ' 1 status', {:action => :issue, :itype => issue_type.to_sym, :option => "status", :issue_id => "1", :value => nil})
+      assert_generic_command(issue_type + ' show 1', {:action => :issue, :itype => issue_type.to_sym, :option => "show", :issue_id => "1", :value => nil})
+      assert_generic_command(issue_type + ' add 1 oops', {:action => :issue, :itype => issue_type.to_sym, :option => "add", :issue_id => "1", :value => "oops"})
+      assert_generic_command(issue_type + ' del 1', {:action => :issue, :itype => issue_type.to_sym, :option => "del", :issue_id => "1", :value => nil})
     end
   end
 
   def assert_look(commands)
     commands.each do |command|
-      assert_generic_command(@player, command, {:action => :look})
-      assert_generic_command(@player, command + ' in', {:action => :look, :at => 'in'})
-      assert_generic_command(@player, command + ' inside', {:action => :look, :at => 'inside'})
-      assert_generic_command(@player, command + ' inside it', {:action => :look, :in => 'it'})
+      assert_generic_command(command, {:action => :look})
+      assert_generic_command(command + ' in', {:action => :look, :at => 'in'})
+      assert_generic_command(command + ' inside', {:action => :look, :at => 'inside'})
+      assert_generic_command(command + ' inside it', {:action => :look, :in => 'it'})
     end
   end
 
   def assert_get(commands)
     commands.each do |command|
-      assert_generic_command(@player, command + ' it', {:action => :get, :object => 'it', :from => nil})
-      assert_generic_command(@player, command + ' it from table', {:action => :get, :object => 'it', :from => 'table'})
+      assert_generic_command(command + ' it', {:action => :get, :object => 'it', :from => nil})
+      assert_generic_command(command + ' it from table', {:action => :get, :object => 'it', :from => 'table'})
     end
   end
 
-  def assert_generic_command(player, command, options)
-    p command
-    p parser = CommandParser.parse(player, command)
+  def assert_inventory(commands)
+    commands.each do |command|
+      assert_generic_command(command, {:action => :show_inventory})
+    end
+  end
+
+  def assert_close(commands)
+    commands.each do |command|
+      assert_generic_command(command + ' door', {:action => :close, :object => 'door'})
+    end
+  end
+
+  def assert_hunger(commands)
+    commands.each do |command|
+      assert_generic_command(command, {:action => :satiety})
+    end
+  end
+
+  def assert_status(commands)
+    commands.each do |command|
+      assert_generic_command(command, {:action => :status})
+    end
+  end
+
+  def assert_sense(sense, commands)
+    commands.each do |command|
+      assert_generic_command(command, {:action => sense, :target => nil})
+      assert_generic_command(command + ' tree', {:action => sense, :target => 'tree'})
+    end
+  end
+
+  def assert_fixed_emote(commands)
+    commands.each do |command|
+      assert_emote_command(command, {:action => command.to_sym, :object => nil, :post => nil})
+      assert_emote_command(command + ' maggie', {:action => command.to_sym, :object => 'maggie', :post => nil})
+      assert_emote_command(command + ' maggie (loudly)', {:action => command.to_sym, :object => 'maggie', :post => 'loudly'})
+    end
+  end
+
+  def assert_enter(commands)
+    commands.each do |command|
+      assert_movement_command(command + ' west', {:action => :enter, :portal_action => command, :object => 'west'})
+    end
+  end
+
+  def assert_direction(commands)
+    commands.each do |command|
+      assert_movement_command(command, {:action => :move, :direction => expand_direction(command), :pre => nil})
+      assert_movement_command(command + ' (smiling)', {:action => :move, :direction => expand_direction(command), :pre => 'smiling'})
+    end
+  end
+
+  def assert_generic_command(command, options)
+    parser = CommandParser.parse(@player, command)
     options.each do |key, value|
       parser.send(key).should == value
       parser.type.should == :Generic
-      parser.player.should == player
+      parser.player.should == @player
     end
   end
+
+  def assert_communication_command(command, options)
+    parser = CommandParser.parse(@player, command)
+    options.each do |key, value|
+      parser.send(key).should == value
+      parser.type.should == :Communication
+      parser.player.should == @player
+    end
+  end
+
+  def assert_emote_command(command, options)
+    parser = CommandParser.parse(@player, command)
+    options.each do |key, value|
+      parser.send(key).should == value
+      parser.type.should == :Emote
+      parser.player.should == @player
+    end
+  end
+
+  def assert_movement_command(command, options)
+    parser = CommandParser.parse(@player, command)
+    options.each do |key, value|
+      parser.send(key).should == value
+      parser.type.should == :Movement
+      parser.player.should == @player
+    end
+  end
+
+  def assert_equip_command(command, options)
+    parser = CommandParser.parse(@player, command)
+    options.each do |key, value|
+      parser.send(key).should == value
+      parser.type.should == :Clothing
+      parser.player.should == @player
+    end
+  end
+
+  def assert_settings_command(command, options)
+    parser = CommandParser.parse(@player, command)
+    options.each do |key, value|
+      parser.send(key).should == value
+      parser.type.should == :Settings
+      parser.player.should == @player
+    end
+  end
+
+  def assert_weapon_combat_command(command, options)
+    parser = CommandParser.parse(@player, command)
+    options.each do |key, value|
+      parser.send(key).should == value
+      parser.type.should == :WeaponCombat
+      parser.player.should == @player
+    end
+  end
+
+  def assert_martial_combat_command(command, options)
+    parser = CommandParser.parse(@player, command)
+    options.each do |key, value|
+      parser.send(key).should == value
+      parser.type.should == :MartialCombat
+      parser.player.should == @player
+    end
+  end
+
+  def assert_custom_command(command, options)
+      parser = CommandParser.parse(@player, command)
+      options.each do |key, value|
+        parser.send(key).should == value
+        parser.type.should == :Custom
+        parser.player.should == @player
+      end
+  end
+
+  def assert_news_command(command, options)
+      parser = CommandParser.parse(@player, command)
+      options.each do |key, value|
+        parser.send(key).should == value
+        parser.type.should == :News
+        parser.player.should == @player
+      end
+  end
+
+  def assert_admin_command(command, options)
+      p command
+      p parser = CommandParser.parse(@player, command)
+      options.each do |key, value|
+        parser.send(key).should == value
+        parser.type.should == :Admin
+        parser.player.should == @player
+      end
+  end
+
 end

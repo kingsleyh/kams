@@ -2,56 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8f6f466-d2c3-43b9-9ce8-9947d540da69" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/specs/command_parser_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/specs/helpers/commands.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/commandparser.rb" afterPath="$PROJECT_DIR$/components/command_parser.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/gameobject.rb" afterPath="$PROJECT_DIR$/lib/game_object.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/specs/helpers/commands.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/eventhandler.rb" afterPath="$PROJECT_DIR$/components/eventhandler.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/manager.rb" afterPath="$PROJECT_DIR$/components/manager.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/storage.rb" afterPath="$PROJECT_DIR$/components/storage.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/events/admin.rb" afterPath="$PROJECT_DIR$/events/admin.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/events/generic.rb" afterPath="$PROJECT_DIR$/events/generic.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/events/martial_combat.rb" afterPath="$PROJECT_DIR$/events/martial_combat.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/events/weapon_combat.rb" afterPath="$PROJECT_DIR$/events/weapon_combat.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/cachegary.rb" afterPath="$PROJECT_DIR$/lib/cachegary.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/koapaginator.rb" afterPath="$PROJECT_DIR$/lib/koapaginator.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/login.rb" afterPath="$PROJECT_DIR$/lib/login.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/playerconnect.rb" afterPath="$PROJECT_DIR$/lib/playerconnect.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/reactor.rb" afterPath="$PROJECT_DIR$/lib/reactor.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/area.rb" afterPath="$PROJECT_DIR$/objects/area.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/armor.rb" afterPath="$PROJECT_DIR$/objects/armor.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/chair.rb" afterPath="$PROJECT_DIR$/objects/chair.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/clothing_items.rb" afterPath="$PROJECT_DIR$/objects/clothing_items.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/container.rb" afterPath="$PROJECT_DIR$/objects/container.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/corpse.rb" afterPath="$PROJECT_DIR$/objects/corpse.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/dagger.rb" afterPath="$PROJECT_DIR$/objects/dagger.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/door.rb" afterPath="$PROJECT_DIR$/objects/door.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/equipment.rb" afterPath="$PROJECT_DIR$/objects/equipment.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/exit.rb" afterPath="$PROJECT_DIR$/objects/exit.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/inventory.rb" afterPath="$PROJECT_DIR$/objects/inventory.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/key.rb" afterPath="$PROJECT_DIR$/objects/key.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/lever.rb" afterPath="$PROJECT_DIR$/objects/lever.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/living.rb" afterPath="$PROJECT_DIR$/objects/living.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/mobile.rb" afterPath="$PROJECT_DIR$/objects/mobile.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/newsboard.rb" afterPath="$PROJECT_DIR$/objects/newsboard.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/parchment.rb" afterPath="$PROJECT_DIR$/objects/parchment.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/player.rb" afterPath="$PROJECT_DIR$/objects/player.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/portal.rb" afterPath="$PROJECT_DIR$/objects/portal.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/prop.rb" afterPath="$PROJECT_DIR$/objects/prop.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/room.rb" afterPath="$PROJECT_DIR$/objects/room.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/scroll.rb" afterPath="$PROJECT_DIR$/objects/scroll.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/sword.rb" afterPath="$PROJECT_DIR$/objects/sword.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/objects/weapon.rb" afterPath="$PROJECT_DIR$/objects/weapon.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.rb" afterPath="$PROJECT_DIR$/server.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/traits/hasinventory.rb" afterPath="$PROJECT_DIR$/traits/hasinventory.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/add_skill.rb" afterPath="$PROJECT_DIR$/util/add_skill.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/all-behaviors.rb" afterPath="$PROJECT_DIR$/util/all-behaviors.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/all-events.rb" afterPath="$PROJECT_DIR$/util/all-events.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/all-objects.rb" afterPath="$PROJECT_DIR$/util/all-objects.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/config.rb" afterPath="$PROJECT_DIR$/util/config.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/log.rb" afterPath="$PROJECT_DIR$/util/log.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/rproc.rb" afterPath="$PROJECT_DIR$/util/rproc.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/command_parser.rb" afterPath="$PROJECT_DIR$/components/command_parser.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/specs/command_parser_spec.rb" afterPath="$PROJECT_DIR$/test/specs/command_parser_spec.rb" />
     </list>
     <ignored path="kams.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,10 +24,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="command_parser.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="command_parser.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/command_parser.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="265" column="33" selection-start="4440" selection-end="4456" vertical-scroll-proportion="0.0">
+            <state line="715" column="27" selection-start="17915" selection-end="18955" vertical-scroll-proportion="6.5093255">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="util.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/util.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="86" column="6" selection-start="1719" selection-end="1719" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -88,19 +51,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="command_parser_spec.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="command_parser_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/specs/command_parser_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="30" selection-start="878" selection-end="878" vertical-scroll-proportion="0.46478873">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="commands.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/specs/helpers/commands.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="20" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0">
+            <state line="115" column="54" selection-start="7046" selection-end="7046" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -164,7 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/objects/newsboard.rb" />
         <option value="$PROJECT_DIR$/objects/parchment.rb" />
         <option value="$PROJECT_DIR$/objects/player.rb" />
         <option value="$PROJECT_DIR$/objects/portal.rb" />
@@ -179,6 +132,7 @@
         <option value="$PROJECT_DIR$/events/admin.rb" />
         <option value="$PROJECT_DIR$/server.rb" />
         <option value="$PROJECT_DIR$/test/specs/helpers/commands.rb" />
+        <option value="$PROJECT_DIR$/components/command_parser.rb" />
         <option value="$PROJECT_DIR$/test/specs/command_parser_spec.rb" />
       </list>
     </option>
@@ -243,20 +197,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kams" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kams" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -276,42 +216,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="specs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kams" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kams" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kams" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kams" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="objects" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -326,20 +230,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kams" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kams" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="events" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -372,39 +262,7 @@
       <recent name="$PROJECT_DIR$/test" />
     </key>
   </component>
-  <component name="RunManager" selected="RSpec.CommandParser">
-    <configuration default="false" name="Guid" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
-      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
-      <module name="kams" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/test/specs" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/test/specs/guid_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Guid" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="RSpec.All specs in: specs">
     <configuration default="false" name="auto_mud" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="kams" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -500,6 +358,38 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="CommandParser" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="All specs in: specs" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="kams" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/test/specs" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="$PROJECT_DIR$/test/specs" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="ALL_IN_FOLDER" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
@@ -613,19 +503,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="RSpec.Guid" />
-      <item index="1" class="java.lang.String" itemvalue="Ruby.auto_mud" />
-      <item index="2" class="java.lang.String" itemvalue="Ruby.login_steps" />
-      <item index="3" class="java.lang.String" itemvalue="RSpec.CommandParser should parse generic commands" />
-      <item index="4" class="java.lang.String" itemvalue="RSpec.CommandParser" />
+      <item index="0" class="java.lang.String" itemvalue="Ruby.auto_mud" />
+      <item index="1" class="java.lang.String" itemvalue="Ruby.login_steps" />
+      <item index="2" class="java.lang.String" itemvalue="RSpec.CommandParser should parse generic commands" />
+      <item index="3" class="java.lang.String" itemvalue="RSpec.CommandParser" />
+      <item index="4" class="java.lang.String" itemvalue="RSpec.All specs in: specs" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="RSpec.CommandParser" />
-        <item index="1" class="java.lang.String" itemvalue="RSpec.CommandParser should parse generic commands" />
-        <item index="2" class="java.lang.String" itemvalue="Ruby.login_steps" />
-        <item index="3" class="java.lang.String" itemvalue="Ruby.auto_mud" />
-        <item index="4" class="java.lang.String" itemvalue="RSpec.Guid" />
+        <item index="0" class="java.lang.String" itemvalue="RSpec.All specs in: specs" />
+        <item index="1" class="java.lang.String" itemvalue="RSpec.CommandParser" />
+        <item index="2" class="java.lang.String" itemvalue="RSpec.CommandParser should parse generic commands" />
+        <item index="3" class="java.lang.String" itemvalue="Ruby.login_steps" />
+        <item index="4" class="java.lang.String" itemvalue="Ruby.auto_mud" />
       </list>
     </recent_temporary>
   </component>
@@ -651,7 +541,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -714,13 +604,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/events/martial_combat.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/events/mobiles.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -791,13 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/specs/helpers/commands.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="20" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/events/generic.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -812,16 +688,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/command_parser.rb">
+    <entry file="file://$PROJECT_DIR$/lib/util.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="265" column="33" selection-start="4440" selection-end="4456" vertical-scroll-proportion="0.0">
+        <state line="86" column="6" selection-start="1719" selection-end="1719" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/specs/command_parser_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="30" selection-start="878" selection-end="878" vertical-scroll-proportion="0.46478873">
+        <state line="115" column="54" selection-start="7046" selection-end="7046" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/command_parser.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="715" column="27" selection-start="17915" selection-end="18955" vertical-scroll-proportion="6.5093255">
           <folding />
         </state>
       </provider>
