@@ -38,3 +38,139 @@ name: tohxdc
 password: xqetqw 
 gender: F 
 ansi: y
+ INFO log-file: Creating new random character with: 
+name: qiwckd 
+password: xuzyuc 
+gender: F 
+ansi: y
+ INFO log-file: Creating new random character with: 
+name: qugreu 
+password: sophay 
+gender: F 
+ansi: y
+ INFO log-file: Attempting to generate command: 
+ INFO log-file: Attempting to generate command: 
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Please supply the command type e.g. -t Generic 
+ use -l to show valid options
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Please supply the command type e.g. -t generic
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Please supply the command type e.g. -t generic 
+ valid types are: 
+ generic\nadmin
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Please supply the command type e.g. -t generic 
+ valid types are: 
+ generic admin
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Please supply the command type e.g. -t generic 
+ valid types are: 
+ generic | admin
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: util/../components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: cry
+ INFO log-file: Successfully added command: cry to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: bug
+ INFO log-file: Successfully added command: bug to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: bug
+ INFO log-file: Successfully added command: bug to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: s
+ INFO log-file: Please supply the command type e.g. -t generic 
+ valid types are: 
+ generic | admin
+ INFO log-file: Attempting to generate command: acroom
+ INFO log-file: Attempting to generate command: bug
+ INFO log-file: Attempting to generate command: bug
+ INFO log-file: Please supply the a regex for the command e.g. -r /^look\s+at\s+(?<at>.*)$/i
+ INFO log-file: Attempting to generate command: stop
+ INFO log-file: Please supply the command type e.g. -t generic 
+ valid types are: 
+ generic | admin
+ INFO log-file: Attempting to generate command: stop
+ INFO log-file: Attempting to generate command: stop
+ INFO log-file: Successfully added command: stop to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: stop
+ INFO log-file: Successfully added command: stop to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: stop
+ INFO log-file: Attempting to generate command: stop
+ INFO log-file: Successfully added command: stop to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: stop
+ INFO log-file: Successfully added command: stop to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: stop
+ INFO log-file: Successfully added command: stop to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate command: stop
+ INFO log-file: Successfully added command: stop to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Please supply command,type and regex: e.g. -c look_at -t generic -r '/^look\s+(?<at>.*)$/i' -u look at tree
+ INFO log-file: Please supply command,type and regex: e.g. -c look_at -t generic -r '/^look\s+(?<at>.*)$/i' -u look at tree
+ INFO log-file: Please supply command,type and regex: e.g. -c look_at -t generic -r '/^look\s+(?<at>.*)$/i' -u look at tree
+ INFO log-file: Please supply command,type and regex: e.g. -c look_at -t generic -r '/^look\s+(?<at>.*)$/i' -u look at tree
+ INFO log-file: Attempting to generate command: stop
+ INFO log-file: Successfully added command: stop to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate test code for command: stop
+ INFO log-file: Successfully added command test code: stop to: /Users/kings/development/projects/kams/test/specs/commands/generic_commands_spec.rb
+ INFO log-file: Attempting to generate command: stop
+ INFO log-file: Successfully added command: stop to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate test code for command: stop
+ INFO log-file: Successfully added command test code: stop to: /Users/kings/development/projects/kams/test/specs/commands/generic_commands_spec.rb
+ INFO log-file: Attempting to generate command: stop
+ INFO log-file: Successfully added command: stop to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate test code for command: stop
+ INFO log-file: Successfully added command test code: stop to: /Users/kings/development/projects/kams/test/specs/commands/generic_commands_spec.rb
+ INFO log-file: Attempting to generate command: stop
+ INFO log-file: Successfully added command: stop to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate test code for command: stop
+ INFO log-file: Successfully added command test code: stop to: /Users/kings/development/projects/kams/test/specs/commands/generic_commands_spec.rb
+ INFO log-file: Attempting to generate command: stop_up
+ INFO log-file: Successfully added command: stop_up to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate test code for command: stop_up
+ INFO log-file: Successfully added command test code: stop_up to: /Users/kings/development/projects/kams/test/specs/commands/generic_commands_spec.rb
+ INFO log-file: Attempting to generate command: stop_up
+ INFO log-file: Successfully added command: stop_up to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate test code for command: stop_up
+ INFO log-file: Successfully added command test code: stop_up to: /Users/kings/development/projects/kams/test/specs/commands/generic_commands_spec.rb
+ INFO log-file: Attempting to generate command: stop_up
+ INFO log-file: Successfully added command: stop_up to: /Users/kings/development/projects/kams/components/commands/generic_commands.rb
+ INFO log-file: Attempting to generate test code for command: stop_up
+ INFO log-file: Successfully added command test code: stop_up to: /Users/kings/development/projects/kams/test/specs/commands/generic_commands_spec.rb

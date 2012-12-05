@@ -15,3 +15,8 @@ Feature: Login
     Given I have an existing character
     When I login
     Then I should be logged in with my character
+
+#  Scenario: Create new character validates desired name length
+#    When I create a new character
+#    Then the character name should be more than 2 letters
+#    And the character name should be less than 20 characters
