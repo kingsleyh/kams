@@ -2,36 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8f6f466-d2c3-43b9-9ce8-9947d540da69" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/commands/commands.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/commands/communication_commands.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/commands/custom_command.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/commands/emotes_commands.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/commands/equipment_commands.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/commands/generic_commands.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/commands/martialcombat_commands.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/commands/movement_commands.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/commands/news_commands.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/commands/settings_commands.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/commands/weaponcombat_commands.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/specs/commands/communication_commands_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/specs/commands/emotes_commands_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/specs/commands/equipment_commands_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/specs/commands/generic_commands_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/specs/commands/martialcombat_commands_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/specs/commands/movement_commands_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/specs/commands/settings_commands_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/specs/commands/weaponcombat_commands_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/util/core_extentions.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/util/generate.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/cukes/automation/log_file.rb" afterPath="$PROJECT_DIR$/util/log_file.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/kams.iml" afterPath="$PROJECT_DIR$/.idea/kams.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/automation.log" afterPath="$PROJECT_DIR$/automation.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/command_parser.rb" afterPath="$PROJECT_DIR$/components/command_parser.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cukes/login.feature" afterPath="$PROJECT_DIR$/test/cukes/login.feature" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/specs/command_parser_spec.rb" afterPath="$PROJECT_DIR$/test/specs/command_parser_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cukes/automation/character.rb" afterPath="$PROJECT_DIR$/test/cukes/automation/character.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cukes/steps/login_steps.rb" afterPath="$PROJECT_DIR$/test/cukes/steps/login_steps.rb" />
     </list>
     <ignored path="kams.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,37 +60,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="news_commands.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/commands/news_commands.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="19" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="communication_commands.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/commands/communication_commands.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="462" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="martialcombat_commands_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/specs/commands/martialcombat_commands_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="49" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="command_parser_spec.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="command_parser_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/specs/command_parser_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="2" selection-start="424" selection-end="424" vertical-scroll-proportion="0.2244389">
+            <state line="12" column="2" selection-start="424" selection-end="424" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auto_mud.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/cukes/automation/auto_mud.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="11" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="character.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/cukes/automation/character.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="57" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.feature" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/cukes/login.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="16" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login_steps.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/cukes/steps/login_steps.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="10" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helper.rx" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/objects/reactions/helper.rx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -135,10 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/components/commands/movement_commands.rb" />
-        <option value="$PROJECT_DIR$/components/commands/emotes_commands.rb" />
-        <option value="$PROJECT_DIR$/test/specs/commands/emotes_commands_spec.rb" />
-        <option value="$PROJECT_DIR$/test/specs/commands/communication_commands_spec.rb" />
         <option value="$PROJECT_DIR$/test/specs/commands/equipment_commands_spec.rb" />
         <option value="$PROJECT_DIR$/test/specs/commands/settings_commands_spec.rb" />
         <option value="$PROJECT_DIR$/components/commands/commands.rb" />
@@ -151,6 +139,10 @@
         <option value="$PROJECT_DIR$/components/command_parser.rb" />
         <option value="$PROJECT_DIR$/components/commands/custom_command.rb" />
         <option value="$PROJECT_DIR$/components/commands/equipment_commands.rb" />
+        <option value="$PROJECT_DIR$/test/cukes/automation/character.rb" />
+        <option value="$PROJECT_DIR$/test/cukes/login.feature" />
+        <option value="$PROJECT_DIR$/test/cukes/automation/auto_mud.rb" />
+        <option value="$PROJECT_DIR$/test/cukes/steps/login_steps.rb" />
       </list>
     </option>
   </component>
@@ -317,6 +309,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="automation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kams" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kams" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="objects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kams" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kams" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="objects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reactions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -700,7 +724,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="293" y="32" width="2065" height="1310" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297609" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -711,7 +735,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29843363" sideWeight="0.99603766" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29843363" sideWeight="0.99603766" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -774,41 +798,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/specs/commands/movement_commands_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1170" selection-end="1304" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/commands/weaponcombat_commands.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="39" selection-start="287" selection-end="287" vertical-scroll-proportion="0.29126215">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/commands/settings_commands.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="32" selection-start="424" selection-end="424" vertical-scroll-proportion="0.36407766">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/commands/movement_commands.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="2" selection-start="2006" selection-end="2006" vertical-scroll-proportion="0.29004854">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/commands/generic_commands.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/commands/emotes_commands.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="543" vertical-scroll-proportion="0.0">
@@ -881,7 +870,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/specs/command_parser_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="2" selection-start="424" selection-end="424" vertical-scroll-proportion="0.2244389">
+        <state line="12" column="2" selection-start="424" selection-end="424" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/cukes/automation/character.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="57" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/cukes/automation/auto_mud.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="11" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/cukes/login.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="16" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/cukes/steps/login_steps.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="10" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objects/reactions/helper.rx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

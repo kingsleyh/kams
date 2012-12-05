@@ -7,9 +7,9 @@ Before do
   @character = Character.random_character
 end
 
-After do
-  @auto.delete_current_character(@character)
-end
+#After do
+#  @auto.delete_current_character(@character)
+#end
 
 When /^I create a new character$/ do
  @auto.choose_to_create_new_character

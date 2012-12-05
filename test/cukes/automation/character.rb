@@ -1,5 +1,5 @@
 require File.dirname(__FILE__) + '/test_data_generator'
-require File.dirname(__FILE__) + '/log_file'
+require File.dirname(__FILE__) + '/../../../util/log_file'
 
 class Character
 
