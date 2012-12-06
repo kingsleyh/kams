@@ -354,8 +354,7 @@ describe CommandParser do
   end
 
   def assert_generic_command(command, options)
-    p command
-    p parser = CommandParser.parse(@player, command)
+    parser = CommandParser.parse(@player, command)
     options.each do |key, value|
       parser.send(key).should == value
       parser.type.should == :Generic
@@ -445,8 +444,7 @@ describe CommandParser do
   end
 
   def assert_admin_command(command, options)
-    p command
-    p parser = CommandParser.parse(@player, command)
+    parser = CommandParser.parse(@player, command)
     options.each do |key, value|
       parser.send(key).should == value
       parser.type.should == :Admin

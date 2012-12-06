@@ -7,7 +7,7 @@ class NewsCommands < Commands
   end
 
   def self.all_commands
-    Set.new(%w(punch kick dodge))
+    Set.new(%w(news))
   end
 
   def self.category

@@ -10,54 +10,13 @@ require File.dirname(__FILE__) + '/commands/equipment_commands'
 require File.dirname(__FILE__) + '/commands/settings_commands'
 require File.dirname(__FILE__) + '/commands/weaponcombat_commands'
 require File.dirname(__FILE__) + '/commands/martialcombat_commands'
+require File.dirname(__FILE__) + '/commands/news_commands'
+require File.dirname(__FILE__) + '/commands/custom_commands'
+require File.dirname(__FILE__) + '/commands/admin_commands'
 require 'andand'
 
 #CommandParser parses commands into commands for the event handler.
 module CommandParser
-
-  @news = Set.new(['news'])
-
-
-  @admin = Set.new(['acreate',
-                    'alook',
-                    'adesc',
-                    'acarea',
-                    'acopy',
-                    'acomment',
-                    'acomm',
-                    'aconfig',
-                    'acportal',
-                    'ahelp',
-                    'portal',
-                    'aset',
-                    'aset!',
-                    'adelete',
-                    'aforce',
-                    'ahide',
-                    'ashow',
-                    'ainfo',
-                    'aput',
-                    'alist',
-                    'alearn',
-                    'areas',
-                    'ateach',
-                    'areload',
-                    'areact',
-                    'awho',
-                    'alog',
-                    'astatus',
-                    'acroom',
-                    'acexit',
-                    'acdoor',
-                    'acprop',
-                    'asave',
-                    'awatch',
-                    'deleteplayer',
-                    'restart',
-                    'terrain',
-                    'whereis'
-                   ])
-
 
   @mobile = Set.new(['teach'])
 
@@ -146,6 +105,7 @@ module CommandParser
     def parse(player,input)
        command = input.split.first.andand.downcase
        return nil if command.blank?
+       event = nil
        event = create_command_event_for(input, GenericCommands) if GenericCommands.has_this?(command)
        event = create_command_event_for(input, CommunicationCommands) if CommunicationCommands.has_this?(command)
        event = create_command_event_for(input, MovementCommands) if MovementCommands.has_this?(command)
@@ -154,6 +114,9 @@ module CommandParser
        event = create_command_event_for(input, SettingsCommands) if SettingsCommands.has_this?(command)
        event = create_command_event_for(input, WeaponcombatCommands) if WeaponcombatCommands.has_this?(command)
        event = create_command_event_for(input, MartialcombatCommands) if MartialcombatCommands.has_this?(command)
+       event = create_command_event_for(input, NewsCommands) if NewsCommands.has_this?(command)
+       event = create_command_event_for(input, AdminCommands) if AdminCommands.has_this?(command) and player.admin
+       event = create_command_event_for(input, CustomCommands) if event.nil?
        event.player = player unless event.nil?
        event
     end
