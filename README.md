@@ -11,6 +11,7 @@ Website: <http://kingdomsofahln.com>
 [EventMachine](http://rubyeventmachine.com/)
 gbdm installation and gems
 ffi gem
+gbdm --> ftp://ftp.gnu.org/gnu/gdbm/gdbm-1.9.tar.gz
 
 ### Installation
 

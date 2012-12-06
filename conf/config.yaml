@@ -1,15 +1,15 @@
----
+--- 
 :log_level: 1
 :save_rate: 1440
 :debug: false
 :admin: supercool
-:goid_type: ':guid'
+:goid_type: ":guid"
 :port: 8888
 :update_rate: 30
 :restart_delay: 10
 :address: 0.0.0.0
 :intro_file: intro.txt
-:start_room: 7093481a-8b5e-3258-bad4-279da5429360
+:start_room: bf158466-7a1f-7035-4694-a38b12620adc
 :restart_limit: 15
 :mccp: false
 :mssp: false

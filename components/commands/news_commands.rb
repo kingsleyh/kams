@@ -15,61 +15,51 @@ class NewsCommands < Commands
   end
 
   def latest_news
-
+    condition(/^news\s+last\s+(?<limit>\d+)/i) do |with|
+      {:action => :latest_news, :limit => with[:limit].to_i} unless with.nil?
+      end
   end
 
   def news
-
+    condition(/^news$/i) do |with|
+      {:action => :latest_news} unless with.nil?
+      end
   end
 
   def read_post
-
+    condition(/^news\s+(read\s+)?(?<post_id>\d+)$/i) do |with|
+      {:action => :read_post, :post_id => with[:post_id]} unless with.nil?
+      end
   end
 
   def write_post
-
+    condition(/^news\s+write$/i) do |with|
+      {:action => :write_post} unless with.nil?
+      end
   end
 
   def reply_post
-
+    condition(/^news\s+reply(\s+to\s+)?\s+(?<reply_to>\d+)$/i) do |with|
+      {:action => :write_post, :reply_to => with[:reply_to]} unless with.nil?
+      end
   end
 
   def delete_post
-
+    condition(/^news\s+delete\s+(?<post_id>\d+)/i) do |with|
+      {:action => :delete_post, :post_id => with[:post_id]} unless with.nil?
+      end
   end
 
   def list_unread
+    condition(/^news\s+unread/i) do |with|
+      {:action => :list_unread} unless with.nil?
+      end
+  end
 
+  def news_all
+    condition(/^news\s+all/i) do |with|
+      {:action => :all} unless with.nil?
+      end
   end
 
 end
-
-
-
-
-
-
-
-
-#case input.downcase
-#       when "news"
-#         event.action = :latest_news
-#       when /^news\s+last\s+(\d+)/i
-#         event.action = :latest_news
-#         event.limit = $1.to_i
-#       when /^news\s+(read\s+)?(\d+)$/i
-#         event.action = :read_post
-#         event.post_id = $2
-#       when /^news\s+write$/i
-#         event.action = :write_post
-#       when /^news\s+reply(\s+to\s+)?\s+(\d+)$/i
-#         event.action = :write_post
-#         event.reply_to = $2
-#       when /^news\s+delete\s+(\d+)/i
-#         event.action = :delete_post
-#         event.post_id = $1
-#       when /^news\s+unread/i
-#         event.action = :list_unread
-#       when /^news\s+all/i
-#         event.action = :all
-#       else
