@@ -16,7 +16,7 @@ class AutoMud
     connect
     cmd("1",/Character name:/)
     cmd(character.name,/Password/)
-    cmd(character.password,/.+/)
+    cmd(character.password,/.*/)
   end
 
   def logout
