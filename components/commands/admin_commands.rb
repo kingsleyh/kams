@@ -46,7 +46,7 @@ class AdminCommands < Commands
 
   def acroom
     condition(/^acroom\s+(?<out_dir>\w+)\s+(?<name>.*)$/i) do |with|
-      {:action => :acroom, :out_dir => with[:out_dir], :in_dir =>  opposite_dir(with[:out_dir]), :name => with[:name]} unless with.nil?
+      {:action => :acroom, :out_dir => with[:out_dir], :in_dir => opposite_dir(with[:out_dir]), :name => with[:name]} unless with.nil?
     end
   end
 
@@ -158,59 +158,88 @@ class AdminCommands < Commands
     end
   end
 
+  def alook_at
+    condition(/^alook\s+(?<at>.*)$/i) do |with|
+      {:action => :alook, :at => with[:at]} unless with.nil?
+    end
+  end
+
+  def alist
+    condition(/^alist$/i) do |with|
+      {:action => :alist} unless with.nil?
+    end
+  end
+
+  def alist_class
+    condition(/^alist\s+(?<match>@\w+|class)\s+(?<attrib>.*)/i) do |with|
+      {:action => :alist, :attrib => with[:attrib], :match => with[:match]} unless with.nil?
+    end
+  end
+
+  def aset
+    condition(/^aset\s+(?<object>.+?)\s+(?<attribute>@\w+|smell|feel|texture|taste|sound|listen)\s+(?<value>.*)$/i) do |with|
+      {:action => :aset, :object => with[:object], :attribute => with[:attribute], :value => with[:value]} unless with.nil?
+    end
+  end
+
+  def aset_force
+    condition(/^aset!\s+(?<object>.+?)\s+(?<attribute>@\w+|smell|feel|texture|taste|sound|listen)\s+(?<value>.*)$/i) do |with|
+      {:action => :aset, :object => with[:object], :attribute => with[attribute], :value => with[:value], :force => true} unless with.nil?
+    end
+  end
+
+  def aput
+    condition(/^aput\s+(?<object>.*?)\s+in\s+(?<in>.*?)$/i) do |with|
+      {:action => :aput, :object => with[:object], :in => with[:in]} unless with.nil?
+    end
+  end
+
+  def areas
+    condition(/^areas$/i) do |with|
+      {:action => :areas} unless with.nil?
+    end
+  end
+
+  def areload
+    condition(/^areload\s+(?<object>.*)$/i) do |with|
+      {:action => :areload, :object => with[:object]} unless with.nil?
+    end
+  end
+
+  def areact
+    condition(/^areact\s+load\s+(?<object>.*?)\s+(?<file>\w+)$/i) do |with|
+      {:action => :areaction, :object => with[:object], :command => 'load', :file => with[:file]} unless with.nil?
+    end
+  end
+
+  def areact_add
+    condition(/^areact\s+(?<command>add|delete)\s+(?<object>.*?)\s+(?<action_name>\w+)$/i) do |with|
+      {:action => :areaction, :object => with[:object], :command => with[:command], :action_name => with[:action_name]} unless with.nil?
+    end
+  end
+
+  def areact_reload
+    condition(/^areact\s+(?<command>reload|clear|show)\s+(?<object>.*?)$/i) do |with|
+      {:action => :areaction, :object => with[:object], :with[:command] => with[:command]} unless with.nil?
+    end
+  end
+
+  def alog
+    condition(/^alog\s+(?<command>\w+)(\s+(?<value>\d+))?$/i) do |with|
+      {:action => :alog, :command => with[:command], :value => with[:value].andand.downcase} unless with.nil?
+    end
+  end
+
+  def acopy
+    condition(/^acopy\s+(?<object>.*)$/i) do |with|
+      {:action => :acopy, :object => with[:object]} unless with.nil?
+      end
+  end
+
 end
 
 
-#  when /^alook\s+(.*)$/i
-#  event[:action] = :alook
-#  event[:at] = $1
-#  when /^alist$/i
-#  event[:action] = :alist
-#  when /^alist\s+(@\w+|class)\s+(.*)/i
-#  event[:action] = :alist
-#  event[:attrib] = $2
-#  event[:match] = $1
-#  when /^aset\s+(.+?)\s+(@\w+|smell|feel|texture|taste|sound|listen)\s+(.*)$/i
-#  event[:action] = :aset
-#  event[:object] = $1
-#  event[:attribute] = $2
-#  event[:value] = $3
-#  when /^aset!\s+(.+?)\s+(@\w+|smell|feel|texture|taste|sound|listen)\s+(.*)$/i
-#  event[:action] = :aset
-#  event[:object] = $1
-#  event[:attribute] = $2
-#  event[:value] = $3
-#  event[:force] = true
-#  when /^aput\s+(.*?)\s+in\s+(.*?)$/i
-#  event[:action] = :aput
-#  event[:object] = $1
-#  event[:in] = $2
-#  when /^areas$/i
-#  event[:action] = :areas
-#  when /^areload\s+(.*)$/i
-#  event[:action] = :areload
-#  event[:object] = $1
-#  when /^areact\s+load\s+(.*?)\s+(\w+)$/i
-#  event[:action] = :areaction
-#  event[:object] = $1
-#  event[:command] = "load"
-#  event[:file] = $2
-#  when /^areact\s+(add|delete)\s+(.*?)\s+(\w+)$/i
-#  event[:action] = :areaction
-#  event[:object] = $2
-#  event[:command] = $1
-#  event[:action_name] = $3
-#  when /^areact\s+(reload|clear|show)\s+(.*?)$/i
-#  event[:action] = :areaction
-#  event[:object] = $2
-#  event[:command] = $1
-#  when /^alog\s+(\w+)(\s+(\d+))?$/i
-#  event[:action] = :alog
-#  event[:command] = $1
-#  event[:value] = $3.downcase if $3
-#  when /^acopy\s+(.*)$/i
-#  event[:action] = :acopy
-#  event[:object] = $1
+
 #  when /^alearn\s+(\w+)$/i
 #  event[:action] = :alearn
 #  event[:skill] = $1
