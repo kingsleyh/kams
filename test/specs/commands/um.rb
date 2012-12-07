@@ -1,21 +1,8 @@
-require File.dirname(__FILE__) + '/commands'
-require File.dirname(__FILE__) + '/../../lib/util'
+class Um
 
-class AdminCommands < Commands
-
-  def self.has_this?(command)
-    all_commands.include?(command)
-  end
-
-  def self.all_commands
-    Set.new(%w(acreate alook adesc acarea acopy acomment acomm aconfig acportal ahelp portal aset aset! adelete aforce ahide ashow ainfo aput alist alearn areas ateach areload areact awho alog astatus acroom acexit acdoor acprop asave awatch deleteplayer restart terrain whereis))
-  end
-
-  def self.category
-    :Admin
-  end
-
-  def astatus
+  def a
+    c=<<-EOF
+ def astatus
     condition(/^astatus/i) do |with|
       {:action => :astatus} unless with.nil?
     end
@@ -23,7 +10,7 @@ class AdminCommands < Commands
 
   def ahelp
     condition(/^ahelp(?<object>.*)$/i) do |with|
-      {:action => :ahelp, :object => with[:object].strip} unless with.nil?
+      {:action => :ahelp, :object => with[:object]} unless with.nil?
     end
   end
 
@@ -296,4 +283,22 @@ class AdminCommands < Commands
       {:action => :whereis, :object => with[:object]} unless with.nil?
     end
   end
+    EOF
+  end
+
+  def do
+    lines = a.split("\n")
+    lines.each_with_index do |line,i|
+     if line.match("def")
+        name = line.split("def")[1].strip
+        puts 'it "should parse ' + name + '" do'
+        token = lines[i+2].split("unless").first.strip
+        puts "  assert_admin_command('#{name}', :#{name}, #{token})\nend \n\n"
+     end
+    end
+  end
+
+
 end
+
+Um.new.do

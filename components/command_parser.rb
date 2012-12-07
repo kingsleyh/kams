@@ -13,6 +13,7 @@ require File.dirname(__FILE__) + '/commands/martialcombat_commands'
 require File.dirname(__FILE__) + '/commands/news_commands'
 require File.dirname(__FILE__) + '/commands/custom_commands'
 require File.dirname(__FILE__) + '/commands/admin_commands'
+require File.dirname(__FILE__) + '/commands/event_commands'
 require 'andand'
 
 #CommandParser parses commands into commands for the event handler.
@@ -42,88 +43,31 @@ module CommandParser
       event
     end
 
-    #Parses input into a hash that can be passed to the EventHandler.
-    #Returns nil if the input cannot be parsed into a meaningful command.
-    #def parse(player, input)
-    #  if input.nil?
-    #    return nil
-    #  end
-    #
-    #  input = input.strip
-    #
-    #  if input == "" or input.nil?
-    #    return nil
-    #  end
-    #
-    #  command = input.split
-    #
-    #  if command.empty?
-    #    return nil
-    #  else
-    #    command = command[0].downcase
-    #  end
-    #
-    #  event = if @generic_commands.include? command
-    #            parse_command_for input, GenericCommands
-    #          elsif @emotes.include? command
-    #            parse_emote input
-    #          elsif @movement.include? command
-    #            parse_movement input
-    #          elsif @equipment.include? command
-    #            parse_equipment input
-    #          elsif @settings.include? command
-    #            parse_settings input
-    #          elsif @admin.include? command and player.admin
-    #            parse_admin input
-    #          elsif @weapon_combat.include? command
-    #            parse_weapon_combat input
-    #          elsif @martial_combat.include? command
-    #            parse_martial_combat input
-    #          elsif @communication.include? command
-    #            parse_communication input
-    #          elsif @news.include? command
-    #            parse_news input
-    #          elsif @mobile.include? command and player.is_a? Mobile
-    #            parse_mobile command ### implement me
-    #          elsif input =~ /^alarm\s+([0-9]+)$/i
-    #            after $1.to_i do
-    #              player.output "***ALARM***"
-    #            end
-    #          elsif input =~ /^(\w+)\s+(.*)$/
-    #            parse_custom input
-    #          end
-    #
-    #  unless event.nil?
-    #    event.player = player
-    #  end
-    #
-    #  event
-    #end
-    #
-    #alias :create_event :parse
 
-    def parse(player,input)
-       command = input.split.first.andand.downcase
-       return nil if command.blank?
-       event = nil
-       event = create_command_event_for(input, GenericCommands) if GenericCommands.has_this?(command)
-       event = create_command_event_for(input, CommunicationCommands) if CommunicationCommands.has_this?(command)
-       event = create_command_event_for(input, MovementCommands) if MovementCommands.has_this?(command)
-       event = create_command_event_for(input, EmotesCommands) if EmotesCommands.has_this?(command)
-       event = create_command_event_for(input, EquipmentCommands) if EquipmentCommands.has_this?(command)
-       event = create_command_event_for(input, SettingsCommands) if SettingsCommands.has_this?(command)
-       event = create_command_event_for(input, WeaponcombatCommands) if WeaponcombatCommands.has_this?(command)
-       event = create_command_event_for(input, MartialcombatCommands) if MartialcombatCommands.has_this?(command)
-       event = create_command_event_for(input, NewsCommands) if NewsCommands.has_this?(command)
-       event = create_command_event_for(input, AdminCommands) if AdminCommands.has_this?(command) and player.admin
-       event = create_command_event_for(input, CustomCommands) if event.nil?
-       event.player = player unless event.nil?
-       event
+    def parse(player, input)
+      command = input.split.first.andand.downcase
+      return nil if command.blank?
+      event = nil
+      event = create_command_event_for(input, GenericCommands) if GenericCommands.has_this?(command)
+      event = create_command_event_for(input, CommunicationCommands) if CommunicationCommands.has_this?(command)
+      event = create_command_event_for(input, MovementCommands) if MovementCommands.has_this?(command)
+      event = create_command_event_for(input, EmotesCommands) if EmotesCommands.has_this?(command)
+      event = create_command_event_for(input, EquipmentCommands) if EquipmentCommands.has_this?(command)
+      event = create_command_event_for(input, SettingsCommands) if SettingsCommands.has_this?(command)
+      event = create_command_event_for(input, WeaponcombatCommands) if WeaponcombatCommands.has_this?(command)
+      event = create_command_event_for(input, MartialcombatCommands) if MartialcombatCommands.has_this?(command)
+      event = create_command_event_for(input, NewsCommands) if NewsCommands.has_this?(command)
+      event = create_command_event_for(input, AdminCommands) if AdminCommands.has_this?(command) and player.admin
+      event = create_event_for(input, player, EventCommands) if EventCommands.has_this?(command)
+      event = create_command_event_for(input, CustomCommands) if event.nil?
+      event.player = player unless event.nil?
+      event
     end
+
     alias :create_event :parse
 
     private
-    def create_command_event_for(input,command_klass)
+    def create_command_event_for(input, command_klass)
       command_class = command_klass.new(input)
       command = nil
       command_klass.instance_methods(false).to_set.each do |method|
@@ -133,6 +77,15 @@ module CommandParser
       Event.new(command_klass.category, command) if command
     end
 
+    def create_event_for(input, player, command_klass)
+      event = nil
+      command_class = command_klass.new(input, player)
+      command_klass.instance_methods(false).to_set.each do |method|
+        event = command_class.send(method)
+        break unless event.nil?
+      end
+      event
+    end
 
     def parse_admin(input)
       event = Event.new(:Admin)
