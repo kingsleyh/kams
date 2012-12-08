@@ -7,7 +7,7 @@ class Logger
   Normal = 1
   Important = 0
 
-  def initialize(log_file = "logs/system.log", buffer_size = 45, buffer_time = 300, max_log_size = 50000000)
+  def initialize(log_file = File.dirname(__FILE__) + "/../logs/system.log", buffer_size = 45, buffer_time = 300, max_log_size = 50000000)
     ServerConfig[:log_level] ||= 1
     @last_dump = Time.now
     @entries = []
