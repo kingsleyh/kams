@@ -2,6 +2,20 @@ require File.dirname(__FILE__) + '/../../../components/commands/weaponcombat_com
 
 describe WeaponcombatCommands do
 
+  it "should return correct category" do
+    WeaponcombatCommands.category.should == :WeaponCombat
+  end
+
+  it "should return correct command list" do
+    WeaponcombatCommands.all_commands.should == Set.new(%w(wield unwield slash block))
+  end
+
+  it "should find all commands in the command list" do
+    WeaponcombatCommands.all_commands.each do |command|
+      WeaponcombatCommands.has_this?(command).should == true
+    end
+  end
+
   it "it should parse wield" do
     assert_weapon_combat_command('wield sword', :wield, {:action => :wield, :weapon => 'sword', :side => nil})
     assert_weapon_combat_command('wield sword left', :wield, {:action => :wield, :weapon => 'sword', :side => 'left'})

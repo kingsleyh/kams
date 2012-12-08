@@ -2,6 +2,24 @@ require File.dirname(__FILE__) + '/../../../components/commands/generic_commands
 
 describe GenericCommands do
 
+  it "should return correct category" do
+    GenericCommands.category.should == :Generic
+  end
+
+  it "should return correct command list" do
+    GenericCommands.all_commands.should == Set.new(%w(bug date delete look l get take feel idea taste smell sniff lick listen grab give health hunger satiety i inv inventory more quit open close shut drop put help lock unlock status stat st time typo who write))
+  end
+
+  it "should find all commands in the command list" do
+    GenericCommands.all_commands.each do |command|
+      GenericCommands.has_this?(command).should == true
+    end
+  end
+
+  it "should not find a command that is not in the command list" do
+    GenericCommands.has_this?('command_not_present').should == false
+  end
+
   it "it should parse delete me please" do
     assert_generic_command('delete me please', :delete_me_please, {:action => :deleteme})
   end

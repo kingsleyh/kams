@@ -2,6 +2,24 @@ require File.dirname(__FILE__) + '/../../../components/commands/martialcombat_co
 
 describe MartialcombatCommands do
 
+  it "should return correct category" do
+    MartialcombatCommands.category.should == :MartialCombat
+  end
+
+  it "should return correct command list" do
+    MartialcombatCommands.all_commands.should ==  Set.new(%w(punch kick dodge))
+  end
+
+  it "should find all commands in the command list" do
+    MartialcombatCommands.all_commands.each do |command|
+      MartialcombatCommands.has_this?(command).should == true
+    end
+  end
+
+  it "should not find a command that is not in the command list" do
+    MartialcombatCommands.has_this?('command_not_present').should == false
+  end
+
   it "it should parse punch" do
     assert_martial_combat_command('punch', :punch, {:action => :punch})
   end

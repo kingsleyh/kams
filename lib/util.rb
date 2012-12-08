@@ -1,3 +1,5 @@
+require File.dirname(__FILE__) + '/../components/command_parser'
+
 class Array
 
   #Joins the array into a simple list with commas and 'and'.

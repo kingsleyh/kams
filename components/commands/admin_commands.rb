@@ -130,7 +130,7 @@ class AdminCommands < Commands
   end
 
   def ashow
-    condition(/^ashow\s+(.*)$/i) do |with|
+    condition(/^ashow\s+(?<object>.*)$/i) do |with|
       {:action => :ahide, :object => with[:object], :hide => false} unless with.nil?
     end
   end
@@ -147,9 +147,9 @@ class AdminCommands < Commands
     end
   end
 
-  def aifo_show
+  def ainfo_show
     condition(/^ainfo\s+(?<command>show|clear)\s+(?<object>.*)$/i) do |with|
-      {:action => :ainof, :object => with[:object], :command => with[:command]} unless with.nil?
+      {:action => :ainfo, :object => with[:object], :command => with[:command]} unless with.nil?
     end
   end
 
@@ -185,7 +185,7 @@ class AdminCommands < Commands
 
   def aset_force
     condition(/^aset!\s+(?<object>.+?)\s+(?<attribute>@\w+|smell|feel|texture|taste|sound|listen)\s+(?<value>.*)$/i) do |with|
-      {:action => :aset, :object => with[:object], :attribute => with[attribute], :value => with[:value], :force => true} unless with.nil?
+      {:action => :aset, :object => with[:object], :attribute => with[:attribute], :value => with[:value], :force => true} unless with.nil?
     end
   end
 
@@ -221,7 +221,7 @@ class AdminCommands < Commands
 
   def areact_reload
     condition(/^areact\s+(?<command>reload|clear|show)\s+(?<object>.*?)$/i) do |with|
-      {:action => :areaction, :object => with[:object], :with[:command] => with[:command]} unless with.nil?
+      {:action => :areaction, :object => with[:object], :command => with[:command]} unless with.nil?
     end
   end
 

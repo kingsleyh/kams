@@ -2,6 +2,24 @@ require File.dirname(__FILE__) + '/../../../components/commands/movement_command
 
 describe MovementCommands do
 
+  it "should return correct category" do
+    MovementCommands.category.should == :Movement
+  end
+
+  it "should return correct command list" do
+    MovementCommands.all_commands.should == Set.new(%w(go east e west w south s north n up u down d northeast ne northwest nw southeast se southwest sw in out sit stand pose enter climb jump crawl gait))
+  end
+
+  it "should find all commands in the command list" do
+    MovementCommands.all_commands.each do |command|
+      MovementCommands.has_this?(command).should == true
+    end
+  end
+
+  it "should not find a command that is not in the command list" do
+    MovementCommands.has_this?('command_not_present').should == false
+  end
+
   it "it should parse gait" do
     assert_movement_command('gait clumsily', :gait, {:action => :gait, :phrase => 'clumsily'})
   end

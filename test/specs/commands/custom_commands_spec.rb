@@ -2,7 +2,8 @@ require File.dirname(__FILE__) + '/../../../components/commands/custom_commands'
 
 describe CustomCommands do
 
-  it "should parse say" do
+
+  it "should parse custom command" do
     assert_custom_command('slide up', :custom, {:action => :custom, :custom_action => 'slide', :target => 'up'})
   end
 

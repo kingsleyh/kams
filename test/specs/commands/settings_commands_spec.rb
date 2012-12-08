@@ -2,6 +2,20 @@ require File.dirname(__FILE__) + '/../../../components/commands/settings_command
 
 describe SettingsCommands do
 
+  it "should return correct category" do
+    SettingsCommands.category.should == :Settings
+  end
+
+  it "should return correct command list" do
+    SettingsCommands.all_commands.should ==  Set.new(%w(set))
+  end
+
+  it "should find all commands in the command list" do
+    SettingsCommands.all_commands.each do |command|
+      SettingsCommands.has_this?(command).should == true
+    end
+  end
+
   it "it should parse enable colours" do
     assert_settings_command('set colors on', :enable_colours, {:action => :setcolor, :option => 'on'})
     assert_settings_command('set colors off', :enable_colours, {:action => :setcolor, :option => 'off'})

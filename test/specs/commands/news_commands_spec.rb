@@ -2,6 +2,24 @@ require File.dirname(__FILE__) + '/../../../components/commands/news_commands'
 
 describe NewsCommands do
 
+  it "should return correct category" do
+    NewsCommands.category.should == :News
+  end
+
+  it "should return correct command list" do
+    NewsCommands.all_commands.should ==  Set.new(%w(news))
+  end
+
+  it "should find all commands in the command list" do
+    NewsCommands.all_commands.each do |command|
+      NewsCommands.has_this?(command).should == true
+    end
+  end
+
+  it "should not find a command that is not in the command list" do
+    NewsCommands.has_this?('command_not_present').should == false
+  end
+
   it "it should parse latest news" do
     assert_news_command('news last 2', :latest_news, {:action => :latest_news, :limit => 2})
   end

@@ -2,6 +2,24 @@ require File.dirname(__FILE__) + '/../../../components/commands/communication_co
 
 describe CommunicationCommands do
 
+  it "should return correct category" do
+    CommunicationCommands.category.should == :Communication
+  end
+
+  it "should return correct command list" do
+    CommunicationCommands.all_commands.should == Set.new(%w(say sayto whisper tell reply))
+  end
+
+  it "should find all commands in the command list" do
+    CommunicationCommands.all_commands.each do |command|
+      CommunicationCommands.has_this?(command).should == true
+    end
+  end
+
+  it "should not find a command that is not in the command list" do
+    CommunicationCommands.has_this?('command_not_present').should == false
+  end
+
   it "should parse say" do
     assert_communication_command('say (with interest) hello', :say, {:action => :say, :phrase => 'hello', :pre => 'with interest'})
     assert_communication_command('say hello', :say, {:action => :say, :phrase => 'hello', :pre => nil})

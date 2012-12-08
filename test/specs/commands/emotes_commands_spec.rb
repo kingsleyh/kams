@@ -2,6 +2,24 @@ require File.dirname(__FILE__) + '/../../../components/commands/emotes_commands'
 
 describe EmotesCommands do
 
+  it "should return correct category" do
+    EmotesCommands.category.should == :Emote
+  end
+
+  it "should return correct command list" do
+    EmotesCommands.all_commands.should == Set.new(%w(smile cheer back laugh cry emote eh er eh? uh pet hug blush ew frown grin hm snicker wave poke yes no huh hi bye yawn bow curtsey brb agree sigh ponder shrug skip nod))
+  end
+
+  it "should find all commands in the command list" do
+    EmotesCommands.all_commands.each do |command|
+      EmotesCommands.has_this?(command).should == true
+    end
+  end
+
+  it "should not find a command that is not in the command list" do
+    EmotesCommands.has_this?('command_not_present').should == false
+  end
+
   it "it should parse emote" do
     assert_emote_command('emote sings happily', :emote, {:action => :emote, :show => 'sings happily'})
   end
