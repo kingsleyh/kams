@@ -1,7 +1,7 @@
 require 'set'
+require 'active_support/core_ext/object/blank'
 require File.dirname(__FILE__) + '/../lib/event'
 require File.dirname(__FILE__) + '/../lib/util'
-require File.dirname(__FILE__) + '/../util/core_extentions'
 require File.dirname(__FILE__) + '/commands/generic_commands'
 require File.dirname(__FILE__) + '/commands/communication_commands'
 require File.dirname(__FILE__) + '/commands/movement_commands'
@@ -25,21 +25,7 @@ module CommandParser
     #when the time elapses.
     #
     #If a block is given, the event parameter is ignored.
-    def future_event(player, seconds_delay, f_event = nil, &block)
-      event = Event.new(:Future, :player => player, :time => seconds_delay)
-
-      if block_given?
-        event.action = :call
-        event.event = block
-      else
-        event.action = :event
-        event.event = f_event
-      end
-
-      event
-    end
-
-    def future(player, second_delay, f_event = nil, &block)
+    def future_event(player, second_delay, f_event = nil, &block)
       arguments = block_given? ? {:action => :call, :event => block} : {:action => :event, :event => f_event}
       Event.new(:Future, arguments.merge(:player => player,:time => second_delay))
     end
