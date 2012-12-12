@@ -24,6 +24,7 @@ class Slant
   def self.apply_to(phrase,slant_text)
     slant_icon = reverse(slant_text)
     icon = slant_icon.nil? ? "." : slant_icon
+    icon = "" if phrase[-1,1] == reverse(slant_text)
     "#{phrase}#{icon}"
   end
 

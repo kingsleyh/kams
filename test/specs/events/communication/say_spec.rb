@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/../../../../events/communication/say'
+require File.dirname(__FILE__) + '/../../../../events/communication'
 require File.dirname(__FILE__) + '/../../../../lib/event'
 
 describe Communication do

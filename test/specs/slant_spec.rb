@@ -23,7 +23,7 @@ describe Slant do
   end
 
   it "should apply slant icon to phrase" do
-    Slant.apply_to('hello there',"exclaim").should == 'hello there!'
+    Slant.apply_to('hello there!',"exclaim").should == 'hello there!'
     Slant.apply_to('hello',"invalid").should == 'hello.'
   end
 
